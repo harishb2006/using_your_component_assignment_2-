@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Postcard from './components/Postcard'
+
 import './App.css'
 
 function App() {
@@ -31,7 +30,23 @@ function App() {
 
   return (
     <>
-      
+      <div className='flex gap-[40px] '>
+      {initialPosts.map((post) => (
+          <Postcard
+            key={post.id}
+            profileImage={post.profileImage}
+            username={post.username}
+            content={post.content}
+            isLiked={post.isLiked}
+          />
+      ))
+       
+            
+            
+           
+    }
+      </div>
+ 
     </>
   )
 }
